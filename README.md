@@ -22,6 +22,7 @@ INSTALLATION:
 -------------
   * Put the code in a directory called 'django_rpx' somewhere in your path
     and put 'django_rpx' in your installed apps.
+  * Run the syncdb command
   * create a url path that serves up the rpx_response view in views.py.
   * You will also need to put the RPXNOW_API_KEY, RPXNOW_REALM and optionally
     RPX_TRUSTED_PROVIDERS into your settings.py (RPXNOW_REALM isn't well
@@ -31,7 +32,7 @@ INSTALLATION:
     is "possumpalace-blog".
   * You will also need to add rpx to your authentication providers list
         AUTHENTICATION_BACKENDS = (
-          'rpx.backends.RpxBackend',
+          'django_rpx.backends.RpxBackend',
           'django.contrib.auth.backends.ModelBackend',
         )
   * You might want to include the rpx template tags in your site code
